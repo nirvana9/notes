@@ -70,4 +70,4 @@ theme: maupassant
 deploy:
   type: git
   repository: git@github.com:nirvana9/notes.git
-  branch: master 
+  branch: notes 
