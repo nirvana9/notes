@@ -3,9 +3,9 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
-subtitle:
-description:
+title: 此处是标题 
+subtitle: 一个人会寂寞，只是怕踏出最初那一步。
+description: 一个人会寂寞，只是怕踏出最初那一步。
 author: songjian
 language: zh-Hans
 timezone:
