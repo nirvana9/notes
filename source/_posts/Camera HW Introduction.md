@@ -1,5 +1,5 @@
 ---
-title: Camera HW Introduction.md
+title: Camera HW Introduction
 date: 2017-05-17 00:14:00
 tags:
 ---
