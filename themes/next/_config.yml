@@ -301,6 +301,10 @@ mathjax:
 # Share
 #duoshuo_share: true
 
+#Share
+sharesdk: true
+shareSDKappkey: 1ebf83c9778c8
+
 # Google Webmaster tools verification setting
 # See: https://www.google.com/webmasters/
 #google_site_verification:
@@ -376,7 +380,7 @@ busuanzi_count:
 
 
 # Enable baidu push so that the blog will push the url to baidu automatically which is very helpful for SEO
-baidu_push: false
+baidu_push: true
 
 # Google Calendar
 # Share your recent schedule to others via calendar page
