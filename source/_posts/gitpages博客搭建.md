@@ -63,7 +63,9 @@ tags:
 ## 将gh-pages分支 设置为gitpages
 登陆github账号，进入 `blog --> Settings --> GitHub Pages`  选择 `gh-pages` 为gitpages 分支，
 访问https://username.github.io/blog/
-    
+
+## 淘宝源
+--registry=https://registry.npm.taobao.org  
 
 
     

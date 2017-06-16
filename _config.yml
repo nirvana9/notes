@@ -4,7 +4,7 @@
 
 # Site
 title: Interstellar 
-subtitle: I thought you were the ghost.
+subtitle: 花径不曾缘客扫，蓬门今始为君开。
 description: 花径不曾缘客扫，蓬门今始为君开。
 author: songjian
 language: zh-Hans
@@ -12,7 +12,7 @@ timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: https://nirvana9.github.io/notes/
+url: https://nirvana9.github.io
 root: /notes/
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -34,7 +34,7 @@ titlecase: false # Transform title into titlecase
 external_link: true # Open external links in new tab
 filename_case: 0
 render_drafts: false
-post_asset_folder: false
+post_asset_folder: true
 relative_link: false
 future: true
 highlight:
