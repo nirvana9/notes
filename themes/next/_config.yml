@@ -302,7 +302,7 @@ mathjax:
 #duoshuo_share: true
 
 #Share
-sharesdk: true
+sharesdk: false
 shareSDKappkey: 1ebf83c9778c8
 
 # Google Webmaster tools verification setting
