@@ -35,6 +35,9 @@ tags:
 [魅族内核团队](http://kernel.meizu.com/)
 [图南的学鸠](http://laiwangyo.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/Camera/)
 [Camera](http://www.voidcn.com/blog/u010245383/list-4.html)
+[baimayangtang](http://cering.github.io/)
+
+[Android官方培训课程中文版(v0.9.7)](http://hukai.me/android-training-course-in-chinese/index.html)
 
 
 [nexus driver](https://developers.google.com/android/drivers)
@@ -42,4 +45,8 @@ tags:
 
 
 [android-dev-bookmarks](https://github.com/zhengxiaopeng/android-dev-bookmarks)
+
+
+[计算机书籍控](http://bestcbooks.com/)
+[IT-Books](http://it-ebooks.flygon.net/)
 
