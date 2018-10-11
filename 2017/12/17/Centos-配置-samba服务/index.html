@@ -1,0 +1,688 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/notes/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/notes/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/notes/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="何去何从" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/notes/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="Centos 7 配置samba服务安装Sambasudo yum -y install samba samba-client samba-common 修改配置文件sudo cp smb.conf smb.conf.bak sudo vim/etc/samba/smb.conf 将smb.conf修改为为如下 [global]     workgroup = WORKGROUP     serv">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Centos 配置 samba服务">
+<meta property="og:url" content="https://nirvana9.github.io/2017/12/17/Centos-配置-samba服务/index.html">
+<meta property="og:site_name" content="夏虫语冰">
+<meta property="og:description" content="Centos 7 配置samba服务安装Sambasudo yum -y install samba samba-client samba-common 修改配置文件sudo cp smb.conf smb.conf.bak sudo vim/etc/samba/smb.conf 将smb.conf修改为为如下 [global]     workgroup = WORKGROUP     serv">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-10-10T09:14:33.803Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Centos 配置 samba服务">
+<meta name="twitter:description" content="Centos 7 配置samba服务安装Sambasudo yum -y install samba samba-client samba-common 修改配置文件sudo cp smb.conf smb.conf.bak sudo vim/etc/samba/smb.conf 将smb.conf修改为为如下 [global]     workgroup = WORKGROUP     serv">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/notes/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://nirvana9.github.io/2017/12/17/Centos-配置-samba服务/"/>
+
+
+
+
+
+  <title> Centos 配置 samba服务 | 夏虫语冰 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/notes/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">夏虫语冰</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+    
+      <p class="site-subtitle">花径不曾缘客扫，蓬门今始为君开。</p>
+    
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/notes/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/notes/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/notes/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/notes/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="https://nirvana9.github.io/notes/2017/12/17/Centos-配置-samba服务/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="宋健">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/notes/images/avatar.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="夏虫语冰">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="夏虫语冰" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Centos 配置 samba服务
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-12-17T00:23:33+08:00">
+                2017-12-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="Centos-7-配置samba服务"><a href="#Centos-7-配置samba服务" class="headerlink" title="Centos 7 配置samba服务"></a>Centos 7 配置samba服务</h2><h2 id="安装Samba"><a href="#安装Samba" class="headerlink" title="安装Samba"></a>安装Samba</h2><pre><code>sudo yum -y install samba samba-client samba-common
+</code></pre><h2 id="修改配置文件"><a href="#修改配置文件" class="headerlink" title="修改配置文件"></a>修改配置文件</h2><pre><code>sudo cp smb.conf smb.conf.bak
+sudo vim/etc/samba/smb.conf
+</code></pre><p>将smb.conf修改为为如下</p>
+<pre><code>[global]
+    workgroup = WORKGROUP
+    server string = Ted Samba Server %v
+    netbios name = sjSamba
+    security = user
+    map to guest = Bad User
+    passdb backend = sjsamba
+
+[sj]
+    comment = project development directory
+    path = /home/sj/work   # 共享路径
+    valid users = sj   # 用户名
+    write list = sj    # 用户名
+    printable = no
+    create mask = 0644
+    directory mask = 0755
+</code></pre><h2 id="创建用户"><a href="#创建用户" class="headerlink" title="创建用户"></a>创建用户</h2><p>我这边使用的是centos 本身的用户 sj</p>
+<pre><code>sudo  smbpasswd -a sj
+</code></pre><h2 id="开启samba服务"><a href="#开启samba服务" class="headerlink" title="开启samba服务"></a>开启samba服务</h2><pre><code>sudo systemctl start smb
+</code></pre><h2 id="设置为开机启动"><a href="#设置为开机启动" class="headerlink" title="设置为开机启动"></a>设置为开机启动</h2><pre><code>sudo systemctl enable smb
+</code></pre><h2 id="防火墙设置"><a href="#防火墙设置" class="headerlink" title="防火墙设置"></a>防火墙设置</h2><pre><code>sudo firewall-cmd --permanent --add-port=139/tcp
+sudo firewall-cmd --permanent --add-port=445/tcp
+sudo systemctl restart firewalld
+</code></pre><h2 id="selinux设置"><a href="#selinux设置" class="headerlink" title="selinux设置"></a>selinux设置</h2><pre><code>sudo setsebool -P samba_enable_home_dirs on
+</code></pre>
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/notes/2017/07/02/笨办法更简单（某书简介，觉得讲得很好，所以转载过来）/" rel="next" title="笨办法更简单（某书简介，觉得讲得很好，所以转载过来）">
+                <i class="fa fa-chevron-left"></i> 笨办法更简单（某书简介，觉得讲得很好，所以转载过来）
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+          
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/notes/images/avatar.jpg"
+               alt="宋健" />
+          <p class="site-author-name" itemprop="name">宋健</p>
+          <p class="site-description motion-element" itemprop="description">花径不曾缘客扫，蓬门今始为君开。</p>
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/notes/archives">
+                <span class="site-state-item-count">6</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/nirvana9" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Centos-7-配置samba服务"><span class="nav-number">1.</span> <span class="nav-text">Centos 7 配置samba服务</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装Samba"><span class="nav-number">2.</span> <span class="nav-text">安装Samba</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修改配置文件"><span class="nav-number">3.</span> <span class="nav-text">修改配置文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建用户"><span class="nav-number">4.</span> <span class="nav-text">创建用户</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#开启samba服务"><span class="nav-number">5.</span> <span class="nav-text">开启samba服务</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设置为开机启动"><span class="nav-number">6.</span> <span class="nav-text">设置为开机启动</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#防火墙设置"><span class="nav-number">7.</span> <span class="nav-text">防火墙设置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#selinux设置"><span class="nav-number">8.</span> <span class="nav-text">selinux设置</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">宋健</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="/notes/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/notes/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/notes/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/notes/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/notes/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/notes/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/notes/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/notes/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/notes/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/notes/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/notes/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+      <!-- UY BEGIN -->
+      <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid="></script>
+      <!-- UY END -->
+  
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+
+</body>
+</html>
